@@ -2,8 +2,9 @@ package com.feng.mvp;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.View;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * 基础Fragment，生命周期关联了Presenter的相关生命周期
