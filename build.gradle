@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        repositories {
+            mavenLocal()
+            maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+            jcenter()
+        }
+    }
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25'
+    defaultConfig {
+        minSdkVersion 20
+        targetSdkVersion 25
+    }
+    useLibrary "org.apache.http.legacy"
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.+'
+}
+
+
