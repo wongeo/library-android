@@ -2,14 +2,17 @@ apply plugin: 'com.android.library'
 
 //内目录的构建脚本
 buildscript {
+    apply from: 'depen.gradle'
     repositories {
-        maven { url uri('file:///D:/repo') }
         mavenLocal()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url rootProject.ext.maven }
+        maven { url rootProject.ext.maven2 }
         mavenCentral()
         google()
         jcenter()
+    }
+    repositories.all {
+        println name + "=" + url
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
@@ -18,15 +21,15 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url uri('file:///D:/repo') }
         mavenLocal()
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url rootProject.ext.maven }
+        maven { url rootProject.ext.maven2 }
         mavenCentral()
         google()
         jcenter()
     }
 }
+
 //模块信息
 android {
     compileSdkVersion 28
@@ -57,12 +60,12 @@ apply plugin: 'maven'
 
 def GROUP_ID = 'com.feng'
 def ARTIFACT_ID = "library-android"
-def VERSION_NAME = '1.0.0-SNAPSHOT'
+def VERSION_NAME = '1.0.1-SNAPSHOT'
 
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: uri('file:///E:/work/repo'))
+            repository(url: uri(rootProject.ext.repo))
             pom.project {
                 groupId GROUP_ID
                 artifactId ARTIFACT_ID
@@ -72,3 +75,4 @@ uploadArchives {
         }
     }
 }
+
