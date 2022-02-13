@@ -1,17 +1,16 @@
 package com.feng.activity;
 
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 
 import com.feng.mvp.BaseActivity;
 
@@ -34,9 +33,9 @@ public class PermissionCompatActivity extends BaseActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
         for (int i = 0; i < grantResults.length; i++) {
-            if (grantResults[i] == PERMISSION_DENIED) {
+            if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
                 boolean isSecondRequest = ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[0]);
                 if (isSecondRequest) {
                     /**重新请求授予权限，显示权限说明（该说明属于系统UI内容，区别第一次弹窗）**/

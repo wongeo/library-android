@@ -1,16 +1,21 @@
 package com.feng.mvp;
 
+import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
+import com.feng.activity.SwipeBackActivity;
 import com.feng.library.R;
 import com.feng.util.StatusBarUtil;
 
@@ -54,9 +59,10 @@ public class BaseActivity extends AppCompatActivity {
         StatusBarUtil.setStatusBarColorKITKAT(this, Color.argb(200, 255, 0, 0));
 
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+//            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryaaa));
 //        }
     }
+
 
 
     @Override

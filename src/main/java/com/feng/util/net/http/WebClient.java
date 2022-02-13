@@ -1,9 +1,12 @@
 package com.feng.util.net.http;
 
+import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.util.Log;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**

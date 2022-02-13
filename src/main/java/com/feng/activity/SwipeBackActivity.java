@@ -1,10 +1,10 @@
 package com.feng.activity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.feng.ui.guesture.GuestureHandler;
 import com.feng.ui.guesture.IGuestureHandler;
