@@ -15,4 +15,3 @@ captures/
 local.properties
 gradle.properties
 .rsync_exclude
-/.idea/
