@@ -1,15 +1,17 @@
+# 过滤文件夹
+.idea/
+build/
+.gradle/
+captures/
+
+# 过滤文件类型
+*.rawproto
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+*.*~
+*.py
+*.pyc
+
+# 过滤特定文件
 local.properties
+gradle.properties
+.rsync_exclude
