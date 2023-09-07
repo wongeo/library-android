@@ -50,7 +50,7 @@ apply plugin: 'maven'
 
 def GROUP_ID = 'com.feng'
 def ARTIFACT_ID = "library-android"
-def VERSION_NAME = '1.0.1-SNAPSHOT'
+def VERSION_NAME = '1.0.2-SNAPSHOT'
 
 uploadArchives {
     repositories {
